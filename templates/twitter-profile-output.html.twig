@@ -1,0 +1,45 @@
+{#
+/**
+ * @file
+ * Displays the User Twitter Timeline formatter.
+ *
+ * Available variables:
+ * - height: height for the widget
+ * - css_class: css clases for the widget.
+ * - twitter_user: twitter user to create the widget whit his las twetts
+ * - theme_background: could by light or dark and shown the tweets in a different background color
+ * - link_color: could be a hexadecimal value
+ * - show_screen_name: show the username in the button
+ * - profile_structure: this could be a list to display a tweets timeline or a follow / mention to display a button
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% if twitter_user != '' %}
+    <div class="{{ css_class }}">
+        {% if profile_structure == 'list' %}
+            <a class="twitter-timeline"
+               data-height="{{ height }}"
+               data-theme="{{ theme_background }}"
+               data-link-color="#{{ link_color }}"
+               href="https://twitter.com/{{ twitter_user }}">
+            </a>
+        {% elseif profile_structure == 'follow' %}
+            <a href="https://twitter.com/{{ twitter_user }}"
+               class="twitter-follow-button"
+               data-size="{{ button_size }}"
+               data-show-screen-name="{{ show_screen_name }}"
+               data-show-count="{{ show_followers }}">
+                Follow @{{ twitter_user }}
+            </a>
+        {% elseif profile_structure == 'mention' %}
+            <a href="https://twitter.com/intent/tweet?screen_name={{ twitter_user }}"
+               class="twitter-mention-button"
+               data-size="{{ button_size }}"
+               data-text="{{ tweet_text }}">
+                Tweet to @{{ twitter_user }}
+            </a>
+        {% endif %}
+    </div>
+{% endif %}

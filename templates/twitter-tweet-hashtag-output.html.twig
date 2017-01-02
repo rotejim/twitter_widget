@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Displays the User Twitter Timeline formatter.
+ *
+ * Available variables:
+ * - height: height for the widget
+ * - css_class: css clases for the widget.
+ * - hashtag: twitter hashtag to create a tweet
+ * - button_size: this make the button largest
+ * - tweet_text: text to display inside the tweet
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% if hashtag != '' %}
+    <div class="{{ css_class }}">
+        <a class="twitter-hashtag-button"
+           data-size="{{ button_size }}"
+           data-text="{{ tweet_text }}"
+           href="https://twitter.com/intent/tweet?button_hashtag={{ hashtag }}">
+            Tweet #{{ hashtag }}
+        </a>
+    </div>
+{% endif %}

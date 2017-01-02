@@ -1,0 +1,83 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function twitter_widget_theme()
+{
+    return array(
+        'twitter_profile_output' => array(
+            'variables' => array(
+                'twitter_user' => NULL,
+                'css_class' => NULL,
+                'height' => NULL,
+                'button_size' => NULL,
+                'show_screen_name' => NULL,
+                'profile_structure' => NULL,
+                'tweet_text' => NULL,
+                'show_followers' => NULL,
+                'link_color' => NULL,
+                'theme_background' => NULL,
+            ),
+            'template' => 'twitter-profile-output',
+        ),
+        'twitter_collection_output' => array(
+            'variables' => array(
+                'twitter_user' => NULL,
+                'css_class' => NULL,
+                'height' => NULL,
+                'collection_id' => NULL,
+                'collection_structure' => NULL,
+                'theme_background' => NULL,
+                'collection_cant' => NULL,
+                'link_color' => NULL,
+            ),
+            'template' => 'twitter-collection-output',
+        ),
+        'twitter_list_output' => array(
+            'variables' => array(
+                'twitter_user' => NULL,
+                'css_class' => NULL,
+                'height' => NULL,
+                'list' => NULL,
+                'link_color' => NULL,
+                'theme_background' => NULL,
+            ),
+            'template' => 'twitter-list-output',
+        ),
+        'twitter_likes_output' => array(
+            'variables' => array(
+                'twitter_user' => NULL,
+                'css_class' => NULL,
+                'height' => NULL,
+                'link_color' => NULL,
+                'theme_background' => NULL,
+            ),
+            'template' => 'twitter-likes-output',
+        ),
+        'twitter_tweet_hashtag_output' => array(
+            'variables' => array(
+                'hashtag' => NULL,
+                'css_class' => NULL,
+                'height' => NULL,
+                'tweet_text' => NULL,
+                'button_size' => NULL,
+            ),
+            'template' => 'twitter-tweet-hashtag-output',
+        ),
+        'twitter_widget_help' => array(
+            'variables' => array(),
+            'template' => 'twitter-widget-help',
+        ),
+    );
+}
+
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function twitter_widget_help($route_name, RouteMatchInterface $route_match)
+{
+}

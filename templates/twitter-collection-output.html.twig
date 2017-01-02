@@ -1,0 +1,37 @@
+{#
+/**
+ * @file
+ * Displays a User Twitter List formatter.
+ *
+ * Available variables:
+ * - height: height for the widget
+ * - css_class: css clases for the widget.
+ * - twitter_user: twitter user to create the widget whit his las twetts.
+ * - collection_structure: could by grid or list and shown the tweets in a different format
+ * - theme_background: could by light or dark and shown the tweets in a different background color
+ * - link_color: could be a hexadecimal value
+ * - collection_cant: number of tweets to show
+ * - collection_id: the twitter id for the list
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% if twitter_user != '' and collection_id >= 100000000000000000 and collection_id < 999999999999999999 %}
+    <div class="{{ css_class }}">
+        {% if collection_structure == 'grid' %}
+            <a class="twitter-grid"
+               data-limit="{{ collection_cant }}"
+               href="https://twitter.com/{{ twitter_user }}/timelines/{{ collection_id }}">
+            </a>
+        {% else %}
+            <a class="twitter-timeline"
+               data-theme="{{ theme_background }}"
+               data-tweet-limit="{{ collection_cant }}"
+               data-height="{{ height }}"
+               data-link-color="#{{ link_color }}"
+               href="https://twitter.com/{{ twitter_user }}/timelines/{{ collection_id }}">
+            </a>
+        {% endif %}
+    </div>
+{% endif %}

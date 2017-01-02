@@ -1,0 +1,10 @@
+name: 'Twitter Widget'
+type: module
+description: 'Provides a Twitter widget formatter for simple Text fields.'
+package: Field types
+version: 8.x-1.0
+core: 8.x
+
+dependencies:
+  - field
+  - text

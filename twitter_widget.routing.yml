@@ -1,0 +1,7 @@
+help.page.twitter_widget:
+  path: '/admin/help/twitter_widget'
+  defaults:
+    _controller: '\Drupal\twitter_widget\Controller\twitterWidget::help'
+    _title:  'Twitter Widget Help'
+  requirements:
+    _permission: 'access content'

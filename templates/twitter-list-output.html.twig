@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Displays the User Twitter Timeline formatter.
+ *
+ * Available variables:
+ * - height: height for the widget
+ * - css_class: css clases for the widget.
+ * - twitter_user: twitter user to create the widget whit his las twetts.
+ * - theme_background: could by light or dark and shown the tweets in a different background color
+ * - link_color: could be a hexadecimal value
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% if twitter_user != '' and list != '' %}
+    <div class="{{ css_class }}">
+        <a class="twitter-timeline"
+           data-theme="{{ theme_background }}"
+           data-height="{{ height }}"
+           data-link-color="#{{ link_color }}"
+           href="https://twitter.com/{{ twitter_user }}/lists/{{ list }}">
+            A Twitter List by {{ twitter_user }}
+        </a>
+    </div>
+{% endif %}
